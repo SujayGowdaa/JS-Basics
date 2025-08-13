@@ -31,7 +31,7 @@
 // console.log('5' - 3); // 2
 // console.log(3 - '5'); // -2
 // console.log([12, 30] + ['20', '20']); // [12,3020,20]
-console.log(Boolean(0));
+// console.log(Boolean(0));
 
 // // JS Equality Operator
 // Loose Equality (==)

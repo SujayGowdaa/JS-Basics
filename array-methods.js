@@ -116,3 +116,125 @@
 
 // const failingStudents = averageOfStudents.some((item) => item.average <= 70);
 // console.log(failingStudents);
+
+// Problem 2
+// You have an array of products. Each product object has an id, a name, a category, and a price. You also have an array of orders, where each order contains an orderId, a productId, and a quantity.
+
+// Your tasks are to:
+
+// Find the Total Value of Each Order:
+// Calculate the total cost for each order and return a new array of objects. Each new object should contain the orderId and a totalValue (the product of its quantity and the corresponding product's price).
+
+// Get the Names of Products in the "Electronics" Category that Cost More than $500:
+// Create a new array containing only the names of products that are in the "Electronics" category and have a price greater than 500.
+
+// Determine if Any Order Contains a Product from the "Home Goods" Category:
+// Return a single boolean (true or false) indicating whether at least one order in the orders array corresponds to a product that is in the "Home Goods" category.
+
+// const products = [
+//   { id: 1, name: 'Laptop', category: 'Electronics', price: 1200 },
+//   { id: 2, name: 'T-Shirt', category: 'Apparel', price: 25 },
+//   { id: 3, name: 'Coffee Maker', category: 'Home Goods', price: 150 },
+//   { id: 4, name: 'Smartphone', category: 'Electronics', price: 800 },
+//   { id: 5, name: 'Desk Lamp', category: 'Home Goods', price: 50 },
+// ];
+
+// const orders = [
+//   { orderId: 'A101', productId: 1, quantity: 1 },
+//   { orderId: 'B202', productId: 3, quantity: 2 },
+//   { orderId: 'C303', productId: 4, quantity: 1 },
+//   { orderId: 'D404', productId: 2, quantity: 5 },
+// ];
+
+// const eachOrderPrice = orders.map((orderItem) => {
+//   const orderedItem = products.find((item) => item.id === orderItem.productId);
+
+//   const totalValueOfOrderedItem = {
+//     orderId: orderItem.orderId,
+//     totalValue: orderedItem.price * orderItem.quantity,
+//   };
+
+//   return totalValueOfOrderedItem;
+// });
+
+// const costlyElectronics = products
+//   .filter((item) => item.category === 'Electronics' && item.price >= 500)
+//   .map((item) => {
+//     return { name: item.name };
+//   });
+
+// const hasHomeGoodsInCart = orders.some((orderItem) => {
+//   const orderedItem = products.find((item) => item.id === orderItem.productId);
+//   return orderedItem.category === 'Home Goods';
+// });
+
+// The Problem 3
+// You have an array of employees, where each employee object contains their id, name, department, salary, and a list of skills. Your tasks are to perform a series of operations on this data to get some specific insights.
+
+// Calculate the Total Payroll for Each Department:
+// Return a new array of objects. Each object should have the department name and the totalSalary for that department.
+
+// Find All Employees with a Specific Skill:
+// Create a new array containing the names of all employees who possess the skill "JavaScript".
+
+// Determine if Any Department Has an Average Salary Below a Threshold:
+// Return a single boolean (true or false) indicating if at least one department has an average salary of less than $60,000
+
+// const employees = [
+//   {
+//     id: 1,
+//     name: 'Alice',
+//     department: 'Engineering',
+//     salary: 80000,
+//     skills: ['JavaScript', 'React', 'Node.js'],
+//   },
+//   {
+//     id: 2,
+//     name: 'Bob',
+//     department: 'Marketing',
+//     salary: 55000,
+//     skills: ['SEO', 'Content Creation', 'Social Media'],
+//   },
+//   {
+//     id: 3,
+//     name: 'Charlie',
+//     department: 'Engineering',
+//     salary: 95000,
+//     skills: ['Python', 'Django', 'SQL'],
+//   },
+//   {
+//     id: 4,
+//     name: 'Diana',
+//     department: 'Marketing',
+//     salary: 65000,
+//     skills: ['SEO', 'Marketing Strategy'],
+//   },
+//   {
+//     id: 5,
+//     name: 'Eve',
+//     department: 'Sales',
+//     salary: 70000,
+//     skills: ['Client Management', 'Salesforce'],
+//   },
+//   {
+//     id: 6,
+//     name: 'Frank',
+//     department: 'Sales',
+//     salary: 45000,
+//     skills: ['Client Management', 'CRM'],
+//   },
+// ];
+
+// const sales = employees.filter((item) => item.department === 'Sales');
+// const engineering = employees.filter(
+//   (item) => item.department === 'Engineering'
+// );
+// const marketing = employees.filter((item) => item.department === 'Marketing');
+
+// const salesTotalPayroll = sales.reduce((acc, item) => {
+//   acc[item.department] = 'Sales';
+//   acc[item.totalSalary] = acc.totalSalary + item.salary;
+//   return acc;
+// }, {});
+
+// console.log(salesTotalPayroll);
