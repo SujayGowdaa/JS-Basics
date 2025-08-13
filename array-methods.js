@@ -238,3 +238,28 @@
 // }, {});
 
 // console.log(salesTotalPayroll);
+
+// const users = [
+//   { id: 1, name: 'Alice', isActive: true },
+//   { id: 2, name: 'Bob', isActive: false },
+//   { id: 3, name: 'Charlie', isActive: true },
+//   { id: 4, name: 'David', isActive: true },
+//   { id: 5, name: 'Eve', isActive: false },
+// ];
+
+// // Your task is to perform three operations on this array using map, reduce, and filter in a single chained call.
+// // 1. Filter: Keep only the users who are active (isActive: true).
+// // 2. Map: Transform the remaining users into a new array of objects containing only their id and name.
+// // 3. Reduce: Calculate the total number of characters in the names of all the active users.
+
+// // Write your solution here:
+// // ...
+
+// const finalArray = users
+//   .filter((item) => item.isActive)
+//   .map((item) => ({ id: item.id, name: item.name }))
+//   .reduce((acc, curItem) => {
+//     return acc + curItem.name.length;
+//   }, 0);
+
+// console.log(finalArray);
