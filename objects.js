@@ -99,3 +99,43 @@
 // console.log(Object.entries(myObject)); // Returns an array of a given object's own enumerable string-keyed property [key, value] pairs. This is excellent for converting an object into an iterable format.
 // const shallowCopyObj = Object.assign({}, myObject); // Copies all enumerable own properties from one or more source objects to a target object. It's a shallow copy, as we discussed earlier.
 // console.log(shallowCopyObj);
+
+// Object Manipulation
+// Problem:
+
+// You have an array of objects, and your task is to transform it into a single object where each key is the id of a user and the value is the user object itself.
+
+// Write a function transformArrayToObject(users) that takes the users array and returns the transformed object.
+
+// Here's the data you'll be working with:
+
+// const users = [
+//   { id: '1', name: 'Alice', active: true },
+//   { id: '2', name: 'Bob', active: false },
+//   { id: '3', name: 'Charlie', active: true },
+// ];
+
+// // Expected output:
+// // {
+// //   '1': { id: '1', name: 'Alice', active: true },
+// //   '2': { id: '2', name: 'Bob', active: false },
+// //   '3': { id: '3', name: 'Charlie', active: true }
+// // }
+
+// // function transformArrayToObject(obj) {
+// //   const transformedObj = obj.map((item) => ({
+// //     [item.id]: item,
+// //   }));
+// //   return transformedObj;
+// // }
+// // console.log(transformArrayToObject(users));
+
+// function transformArrayToObject(obj) {
+//   const transformedObj = obj.reduce((acc, cur) => {
+//     console.log(acc);
+//     acc[cur.id] = cur;
+//     return acc;
+//   }, {});
+//   return transformedObj;
+// }
+// console.log(transformArrayToObject(users));
