@@ -40,11 +40,11 @@
 // Expected Output (random):
 // (after 2.3 seconds) Task finished
 // ✅ Success
-//
+
 // OR
-//
+
 // (after 1.4 seconds) ❌ Failed: Something went wrong
-//
+
 // Your code here:
 
 // function randomDelayMessage(message) {
@@ -72,24 +72,24 @@
 
 // Problem 3:
 // Create two functions:
-//
+
 // 1. stepOne():
 //    - Returns a promise
 //    - Resolves after 1 second with the value: "Step One Complete"
-//
+
 // 2. stepTwo(prevMessage):
 //    - Returns a promise
 //    - Resolves after 2 seconds with: "<prevMessage> -> Step Two Complete"
-//
+
 // Chain them so that:
 // - stepTwo runs only if stepOne succeeds
 // - At the end, log the final message
 // - If any step fails, catch the error and log it
-//
+
 // Example expected output:
 // (after 3 seconds total)
 // Step One Complete -> Step Two Complete
-//
+
 // Your code here:
 
 // function stepOne() {
@@ -118,18 +118,18 @@
 // 1. taskA -> resolves after 1 second with "A done"
 // 2. taskB -> resolves after 2 seconds with "B done"
 // 3. taskC -> resolves after 3 seconds with "C done"
-//
+
 // Create these three as functions returning promises.
 // Then use Promise.all so that:
 // - They all start at the same time
 // - You wait for all of them to finish
 // - You log an array of results in the order [A done, B done, C done]
-//
+
 // Example expected output (after ~3 seconds):
 // ["A done", "B done", "C done"]
-//
+
 // If any task fails, log "Error: <message>" without throwing.
-//
+
 // Your code here:
 
 // function taskA() {
@@ -162,22 +162,22 @@
 
 // Problem 5:
 // You have three API simulation functions:
-//
+
 // 1. getUser -> resolves after 1s with "User data"
 // 2. getPosts -> rejects after 2s with "Posts failed"
 // 3. getComments -> resolves after 3s with "Comments data"
-//
+
 // Use Promise.allSettled so that:
 // - All three run in parallel
 // - You log the status and value/reason of each result
 // - Example output after ~3 seconds:
-//
+
 // [
 //   { status: "fulfilled", value: "User data" },
 //   { status: "rejected", reason: "Posts failed" },
 //   { status: "fulfilled", value: "Comments data" }
 // ]
-//
+
 // Your code here:
 
 // function getUser() {
@@ -226,9 +226,9 @@
 // 1. Takes a 'name' as a parameter.
 // 2. Uses a 'delay' function (provided below) to wait for 1 second.
 // 3. After the delay, it should log a greeting to the console like "Hello, [name]!"
-//
+
 // The 'delay' function is already written for you.
-//
+
 // Your code here:
 // function delay(ms) {
 //   return new Promise(resolve => setTimeout(resolve, ms));
@@ -260,7 +260,7 @@
 // 2. Uses the user ID from the previous step to call 'fetchPosts' (provided below).
 // 3. Finally, it should log the fetched posts to the console.
 // 4. Use a try...catch block to handle errors from either fetch function. If an error occurs, log the error message.
-//
+
 // Your code here:
 // function fetchUser() {
 //   return new Promise((resolve, reject) => {
@@ -338,47 +338,77 @@
 // 2. Use Promise.all to wait for all three promises to resolve.
 // 3. The function should return an object containing the results from all three fetches, with keys 'photos', 'friends', and 'settings'.
 // 4. Use a try...catch block to gracefully handle a rejection from any of the promises.
-//
+
 // Your code here:
-function fetchPhotos() {
-  return new Promise((resolve) =>
-    setTimeout(() => resolve(['photo1.jpg', 'photo2.jpg']), 2000)
-  );
-}
+// function fetchPhotos() {
+//   return new Promise((resolve) =>
+//     setTimeout(() => resolve(['photo1.jpg', 'photo2.jpg']), 2000)
+//   );
+// }
 
-function fetchFriends() {
-  return new Promise((resolve, reject) =>
-    // reject('reason unknown')
-    setTimeout(() => resolve(['friendA', 'friendB']), 1500)
-  );
-}
+// function fetchFriends() {
+//   return new Promise((resolve, reject) =>
+//     // reject('reason unknown')
+//     setTimeout(() => resolve(['friendA', 'friendB']), 1500)
+//   );
+// }
 
-function fetchSettings() {
-  return new Promise((resolve, reject) => {
-    const success = true; // Set to 'false' to test the catch block
-    setTimeout(() => {
-      if (success) {
-        resolve({ theme: 'dark', notifications: true });
-      } else {
-        reject('Failed to fetch settings.');
-      }
-    }, 1000);
-  });
-}
+// function fetchSettings() {
+//   return new Promise((resolve, reject) => {
+//     const success = true; // Set to 'false' to test the catch block
+//     setTimeout(() => {
+//       if (success) {
+//         resolve({ theme: 'dark', notifications: true });
+//       } else {
+//         reject('Failed to fetch settings.');
+//       }
+//     }, 1000);
+//   });
+// }
 
-async function fetchAllUserData() {
-  try {
-    const data = await Promise.all([
-      fetchPhotos(),
-      fetchFriends(),
-      fetchSettings(),
-    ]);
-    console.log(data);
-  } catch (err) {
-    console.log('Error:', err);
-  }
-}
+// async function fetchAllUserData() {
+//   try {
+//     const data = await Promise.all([
+//       fetchPhotos(),
+//       fetchFriends(),
+//       fetchSettings(),
+//     ]);
+//     console.log(data);
+//   } catch (err) {
+//     console.log('Error:', err);
+//   }
+// }
 
-fetchAllUserData()
-  .then((data) => console.log(data))
-  .catch((error) => console.error('Error:', error));
+// fetchAllUserData()
+//   .then((data) => console.log(data))
+//   .catch((error) => console.error('Error:', error));
+// Problem: Asynchronous JavaScript (Promises, async/await)
+
+// 1. A promise that simulates fetching data from an API
+// function myPromise() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       // Change this to reject('Network error') to test the catch block
+//       // resolve('data from API');
+//       reject('Network Error');
+//     }, 2000);
+//   });
+// }
+
+// // 2. Write an asynchronous function 'fetchDataAndProcess()' that:
+// //    a. Uses async/await to handle the promise.
+// //    b. Waits for the data, then logs the processed data (e.g., in uppercase).
+// //    c. Includes a try...catch block to handle errors.
+
+// async function fetchDataAndProcess() {
+//   // Your code here
+//   try {
+//     const data = await myPromise();
+//     console.log(data.toUpperCase());
+//   } catch (err) {
+//     console.log(err.toUpperCase());
+//   }
+// }
+
+// // 3. Call the function
+// fetchDataAndProcess();
