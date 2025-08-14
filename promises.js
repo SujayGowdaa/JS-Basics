@@ -412,3 +412,68 @@
 
 // // 3. Call the function
 // fetchDataAndProcess();
+
+// Promises
+// Problem:
+
+// You have a function checkAge(age) that should return a Promise.
+
+// The promise should resolve if the age is 18 or greater. The resolved value should be the string 'Access Granted'.
+
+// The promise should reject if the age is less than 18. The rejected value should be the string 'Access Denied'.
+
+// Write the code to call the checkAge function with an age of 20 and use .then() and .catch() to handle the resolved and rejected states, logging the appropriate message to the console.
+
+// Do the same thing with an age of 15 to demonstrate the rejected state.
+
+// function checkAge(age) {
+//   return new Promise((resolve, reject) => {
+//     if (age > 18) {
+//       resolve('Access Granted');
+//     } else {
+//       reject('Access Denied');
+//     }
+//   });
+// }
+
+// checkAge(20)
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err));
+
+// checkAge(15)
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err));
+
+// async/await
+// Problem:
+
+// You have a function fetchData() that returns a Promise that resolves with the string 'Data fetched successfully' after a 2-second delay.
+
+// Write an async function logData() that uses await to handle the fetchData() promise.
+
+// Log the resolved data to the console.
+
+// Include a try...catch block to handle any potential rejection from the promise and log the error message.
+
+// Demonstrate the function by calling logData().
+
+// Here is the code you will be working with:
+
+// function fetchData() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve('Data fetched successfully');
+//     }, 2000);
+//   });
+// }
+
+// async function logData(params) {
+//   try {
+//     const data = await fetchData();
+//     console.log(data);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+
+// logData();
