@@ -84,3 +84,68 @@
 // const funExpression = () => {
 //   console.log('calling expression');
 // };
+
+// parent(child, child2, child3);
+
+// function parent(child, child2, child3) {
+//   setTimeout(() => {
+//     console.log('im done');
+//     child();
+//     child2();
+//     child3();
+//   }, 2000);
+// }
+
+// function child() {
+//   console.log('im a 1st child');
+// }
+// function child2() {
+//   console.log('im a 2nd child');
+// }
+// function child3() {
+//   console.log('im a 3rd child');
+// }
+
+// parent()
+//   .then(() => {
+//     return child();
+//   })
+//   .catch((err) => console.log(err))
+//   .then(() => {
+//     return child2();
+//   })
+//   .catch((err) => console.log(err))
+//   .then(() => {
+//     return child3();
+//   })
+//   .catch((err) => console.log(err));
+
+// function parent() {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       console.log('im done');
+//       resolve();
+//     }, 2000);
+//   });
+// }
+
+// function child() {
+//   return new Promise((resolve) => {
+//     console.log('im a 1st child');
+//     resolve();
+//   });
+// }
+
+// function child2() {
+//   return new Promise((resolve, reject) => {
+//     console.log('im a 2nd child');
+//     reject('rejecting');
+//   });
+// }
+
+// function child3() {
+//   return new Promise((resolve) => {
+//     console.log('im a 3rd child');
+//     resolve();
+//   });
+// }
