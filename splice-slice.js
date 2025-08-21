@@ -22,3 +22,4 @@ const fruits3 = ['apple', 'kiwi'];
 fruits3.splice(1, 0, 'banana', 'orange');
 
 // fruits is now ['apple', 'banana', 'orange', 'kiwi']
+console.log(obj === obj);
